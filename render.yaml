@@ -30,8 +30,8 @@ services:
     buildCommand: cd frontend && npm ci && npm run build
     publishPath: frontend/dist
     envVars:
-      - key: VITE_API_URL
-        fromEnv: VITE_API_URL
+      - key: VITE_API_BASE_URL
+        fromEnv: VITE_API_BASE_URL
 
 # Notes:
 # - Replace `branch` with the branch you want Render to deploy from.

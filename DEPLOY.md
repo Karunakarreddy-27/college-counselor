@@ -48,7 +48,7 @@ MONGO_DB_NAME=
 GEMINI_API_KEY=
 AUTH_SECRET=
 FRONTEND_ORIGINS=http://localhost:3000
-VITE_API_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:8000/api
 ```
 
 2. Build and start the services:

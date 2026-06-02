@@ -1,0 +1,63 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  trigger-deploys:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Trigger and wait for Render deploys
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          set -euo pipefail
+          API="https://api.render.com/v1"
+
+          echo "Triggering backend deploy..."
+          if [ -n "${{ secrets.RENDER_SERVICE_ID_BACKEND }}" ]; then
+            BACK_ID="${{ secrets.RENDER_SERVICE_ID_BACKEND }}"
+            resp=$(curl -s -X POST "$API/services/$BACK_ID/deploys" -H "Authorization: Bearer $RENDER_API_KEY" -H "Content-Type: application/json" -d '{"clearCache":false}')
+            echo "$resp" | jq .
+            deploy_id=$(echo "$resp" | jq -r '.id // empty')
+            if [ -z "$deploy_id" ]; then echo "Failed to trigger backend deploy"; exit 1; fi
+            echo "Waiting for backend deploy ($deploy_id) to finish..."
+            for i in $(seq 1 60); do
+              status=$(curl -s -H "Authorization: Bearer $RENDER_API_KEY" "$API/services/$BACK_ID/deploys/$deploy_id" | jq -r '.status // empty')
+              echo "backend status: $status"
+              if [ "$status" = "success" ]; then break; fi
+              if [ "$status" = "failed" ]; then echo "Backend deploy failed"; exit 1; fi
+              sleep 5
+            done
+            backend_domain=$(curl -s -H "Authorization: Bearer $RENDER_API_KEY" "$API/services/$BACK_ID" | jq -r '.service.defaultDomain // .defaultDomain')
+            echo "Backend URL: https://$backend_domain"
+          else
+            echo "RENDER_SERVICE_ID_BACKEND not set; skipping backend"
+          fi
+
+          echo "Triggering frontend deploy..."
+          if [ -n "${{ secrets.RENDER_SERVICE_ID_FRONTEND }}" ]; then
+            FR_ID="${{ secrets.RENDER_SERVICE_ID_FRONTEND }}"
+            resp=$(curl -s -X POST "$API/services/$FR_ID/deploys" -H "Authorization: Bearer $RENDER_API_KEY" -H "Content-Type: application/json" -d '{"clearCache":false}')
+            echo "$resp" | jq .
+            deploy_id=$(echo "$resp" | jq -r '.id // empty')
+            if [ -z "$deploy_id" ]; then echo "Failed to trigger frontend deploy"; exit 1; fi
+            echo "Waiting for frontend deploy ($deploy_id) to finish..."
+            for i in $(seq 1 60); do
+              status=$(curl -s -H "Authorization: Bearer $RENDER_API_KEY" "$API/services/$FR_ID/deploys/$deploy_id" | jq -r '.status // empty')
+              echo "frontend status: $status"
+              if [ "$status" = "success" ]; then break; fi
+              if [ "$status" = "failed" ]; then echo "Frontend deploy failed"; exit 1; fi
+              sleep 5
+            done
+            frontend_domain=$(curl -s -H "Authorization: Bearer $RENDER_API_KEY" "$API/services/$FR_ID" | jq -r '.service.defaultDomain // .defaultDomain')
+            echo "Frontend URL: https://$frontend_domain"
+          else
+            echo "RENDER_SERVICE_ID_FRONTEND not set; skipping frontend"
+          fi

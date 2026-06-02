@@ -3,11 +3,16 @@ import {
   GraduationCap, BookOpen, User, Coins, Scale, FileText, MessageSquare, 
   LogOut, CheckCircle2, Compass, Bookmark, ExternalLink, 
   Sparkles, ArrowRight, UserCheck, Plus, Trash2, Home, Check, Info, 
-  ChevronRight, RefreshCw, Send, HelpCircle
+  ChevronRight, RefreshCw, Send, HelpCircle, Sun, Moon
 } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+
+//const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+const API_BASE = 'https://college-counselor-backendd.onrender.com/api';
+console.log("API_BASE =", API_BASE);
+console.log("ENV =", import.meta.env.VITE_API_BASE_URL);
 const AUTH_TOKEN_KEY = 'ap_counselor_auth_token';
+
 
 // Initial College List for Local Calculations (Offline Fallback)
 const LOCAL_COLLEGES = [
@@ -56,6 +61,7 @@ export default function App() {
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(true);
   const [showWelcome, setShowWelcome] = useState(true);
+  const [theme, setTheme] = useState(() => localStorage.getItem('ap_counselor_theme') || 'dark');
   
   // App Navigation
   const [activeTab, setActiveTab] = useState('dashboard'); // dashboard, branch, colleges, reality, scholarships, compare, roadmap, chatbot
@@ -130,6 +136,12 @@ export default function App() {
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatHistory]);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('light', theme === 'light');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('ap_counselor_theme', theme);
+  }, [theme]);
 
   const loadUserProfile = async (appUser) => {
     setAuthError('');
@@ -694,6 +706,13 @@ export default function App() {
               <span className="text-sm font-semibold text-slate-200">{user.displayName || user.email}</span>
               <span className="text-xs text-brand-400 font-medium">Rank: {profileData.rank ? parseInt(profileData.rank).toLocaleString() : 'Not Set'}</span>
             </div>
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className={`p-2 rounded-xl transition-all ${theme === 'dark' ? 'text-slate-300 hover:text-brand-300 hover:bg-slate-800/50' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200'}`}
+              title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} mode`}
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <button 
               onClick={handleLogout} 
               className="p-2 text-slate-400 hover:text-rose-400 hover:bg-slate-800/50 rounded-xl transition-all"

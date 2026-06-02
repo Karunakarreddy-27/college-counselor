@@ -94,3 +94,88 @@
 .status-pill-red {
   @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-950 text-rose-300 border border-rose-800/50;
 }
+
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  background-image: none;
+}
+
+html.light ::selection {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+html.light .glass-panel {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(148, 163, 184, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(148, 163, 184, 0.12);
+}
+
+html.light .glow-spot {
+  opacity: 0.35;
+}
+
+html.light [class*='bg-slate-950'] {
+  background-color: #f8fafc !important;
+}
+
+html.light [class*='bg-slate-950/'] {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+html.light [class*='bg-slate-900/'] {
+  background-color: rgba(241, 245, 249, 0.96) !important;
+}
+
+html.light [class*='bg-slate-900'] {
+  background-color: rgba(241, 245, 249, 0.98) !important;
+}
+
+html.light [class*='bg-slate-800/'] {
+  background-color: rgba(226, 232, 240, 0.95) !important;
+}
+
+html.light [class*='bg-slate-800'] {
+  background-color: rgba(226, 232, 240, 0.92) !important;
+}
+
+html.light [class*='bg-slate-850'] {
+  background-color: rgba(241, 245, 249, 0.94) !important;
+}
+
+html.light [class*='text-slate-100'] {
+  color: #0f172a !important;
+}
+
+html.light [class*='text-slate-200'] {
+  color: #1e293b !important;
+}
+
+html.light [class*='text-slate-300'] {
+  color: #334155 !important;
+}
+
+html.light [class*='text-slate-400'] {
+  color: #475569 !important;
+}
+
+html.light [class*='text-slate-500'] {
+  color: #64748b !important;
+}
+
+html.light [class*='text-slate-600'] {
+  color: #475569 !important;
+}
+
+html.light [class*='border-slate-800'] {
+  border-color: #cbd5e1 !important;
+}
+
+html.light [class*='border-slate-900'] {
+  border-color: #94a3b8 !important;
+}
+
+html.light .glass-panel-hover:hover {
+  @apply bg-slate-200/80 border-slate-300 shadow-xl;
+}

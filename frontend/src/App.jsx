@@ -55,6 +55,7 @@ export default function App() {
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(true);
   
   // App Navigation
   const [activeTab, setActiveTab] = useState('dashboard'); // dashboard, branch, colleges, reality, scholarships, compare, roadmap, chatbot
@@ -92,6 +93,7 @@ export default function App() {
   const [compareList, setCompareList] = useState([]);
   const [compareResult, setCompareResult] = useState(null);
   const [isComparing, setIsComparing] = useState(false);
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
 
   // Chatbot State
   const [chatMessage, setChatMessage] = useState('');
@@ -129,6 +131,30 @@ export default function App() {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatHistory]);
 
+  const loadUserProfile = async (appUser) => {
+    setAuthError('');
+    try {
+      const profileRes = await authFetch(`${API_BASE}/profile/${appUser.uid}`);
+      if (profileRes.ok) {
+        const savedProfile = await profileRes.json();
+        setProfileData(savedProfile);
+        setHasCompletedProfile(true);
+        computeAllInsights(savedProfile, appUser.uid);
+        return;
+      }
+    } catch {
+      // ignore; fallback to local cache
+    }
+
+    const cachedProfile = localStorage.getItem(`ap_counselor_profile_${appUser.uid}`);
+    if (cachedProfile) {
+      const prof = JSON.parse(cachedProfile);
+      setProfileData(prof);
+      setHasCompletedProfile(true);
+      computeAllInsights(prof, appUser.uid);
+    }
+  };
+
   // Restore backend-authenticated session
   useEffect(() => {
     const restoreSession = async () => {
@@ -147,22 +173,7 @@ export default function App() {
         const appUser = await meRes.json();
         setUser(appUser);
         setIsAuthenticated(true);
-
-        const profileRes = await authFetch(`${API_BASE}/profile/${appUser.uid}`);
-        if (profileRes.ok) {
-          const savedProfile = await profileRes.json();
-          setProfileData(savedProfile);
-          setHasCompletedProfile(true);
-          computeAllInsights(savedProfile, appUser.uid);
-        } else {
-          const cachedProfile = localStorage.getItem(`ap_counselor_profile_${appUser.uid}`);
-          if (cachedProfile) {
-            const prof = JSON.parse(cachedProfile);
-            setProfileData(prof);
-            setHasCompletedProfile(true);
-            computeAllInsights(prof, appUser.uid);
-          }
-        }
+        await loadUserProfile(appUser);
       } catch (err) {
         console.warn(err);
         localStorage.removeItem(AUTH_TOKEN_KEY);
@@ -319,7 +330,7 @@ export default function App() {
     const lims = [];
     const sugs = [];
 
-    if (rank > 20000 && prof.preferred_branch === 'CSE' && (govPref === 'Government' || target.length === 0)) {
+    if (rank > 20000 && prof.preferred_branch === 'CSE' && (govPref === 'Government' || interests.length === 0)) {
       hasLim = true;
       lims.push(`Your rank (${rank.toLocaleString()}) exceeds standard thresholds for CSE branches in top government institutions.`);
       sugs.push("Add Private Autonomous colleges (like GVP, VRSEC) which offer high placements with flexible cutoffs.");
@@ -475,11 +486,13 @@ export default function App() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.detail || 'Compare failed');
       setCompareResult(data);
+      setRecentlyViewed(data.comparison || []);
     } catch {
       // Fallback to local comparison
       const local = buildLocalResult(names);
       if (local) {
         setCompareResult(local);
+        setRecentlyViewed(local.comparison);
       }
     } finally {
       setIsComparing(false);
@@ -550,6 +563,7 @@ export default function App() {
       localStorage.setItem(AUTH_TOKEN_KEY, data.access_token);
       setUser(data.user);
       setIsAuthenticated(true);
+      await loadUserProfile(data.user);
     } catch (err) {
       setAuthError(err.message);
     }
@@ -592,6 +606,7 @@ export default function App() {
       localStorage.setItem(AUTH_TOKEN_KEY, loginData.access_token);
       setUser(loginData.user);
       setIsAuthenticated(true);
+      await loadUserProfile(loginData.user);
     } catch (err) {
       setAuthError(err.message);
     }
@@ -608,6 +623,10 @@ export default function App() {
     setCompareList([]);
     setCompareResult(null);
     setChatHistory([{ sender: 'counselor', text: 'Welcome back! Ask me any counseling question.' }]);
+    setShowWelcome(true);
+    setAuthMode('login');
+    setEmail('');
+    setPassword('');
   };
 
   // Profile Wizard Submit
@@ -664,7 +683,7 @@ export default function App() {
             <GraduationCap className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-bold font-sans tracking-tight">AP Admission Counselor</h1>
+            <h1 className="text-xl font-bold font-sans tracking-tight">Admission Counselor</h1>
             <p className="text-xs text-slate-400">Agentic AI + RAG-Powered Portal</p>
           </div>
         </div>
@@ -694,6 +713,33 @@ export default function App() {
           <main className="flex-1 flex items-center justify-center p-6">
             <div className="glass-panel border-slate-800 p-6 text-sm text-slate-300">
               Checking your secure session...
+            </div>
+          </main>
+        ) : !isAuthenticated && showWelcome ? (
+          <main className="flex-1 flex items-center justify-center p-6">
+            <div className="max-w-md w-full glass-panel p-8 shadow-glass border-slate-800 flex flex-col items-center text-center gap-6">
+              <div className="inline-flex bg-brand-500/10 p-5 rounded-3xl mb-2 text-brand-400">
+                <GraduationCap className="w-8 h-8" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-extrabold tracking-tight">Admission Counselor</h2>
+                <p className="text-sm text-slate-400 mt-3">Get started with career-guided college recommendations, comparison tools, and scholarship guidance tailored for Andhra Pradesh counseling.</p>
+              </div>
+              <div className="space-y-4 w-full">
+                <button
+                  onClick={() => { setShowWelcome(false); setAuthMode('login'); }}
+                  className="w-full gradient-btn py-3"
+                >
+                  Get Started
+                </button>
+                <button
+                  onClick={() => { setShowWelcome(false); setAuthMode('register'); }}
+                  className="w-full border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-slate-900 transition-all"
+                >
+                  Create an Account
+                </button>
+              </div>
+              <p className="text-xs text-slate-500">Already have an account? <button onClick={() => { setShowWelcome(false); setAuthMode('login'); }} className="text-brand-400 underline">Sign in</button></p>
             </div>
           </main>
         ) : !isAuthenticated ? (
@@ -1158,16 +1204,6 @@ export default function App() {
                 </button>
 
                 <button 
-                  onClick={() => setActiveTab('roadmap')} 
-                  className={`w-full flex items-center gap-3.5 px-4.5 py-3 text-sm font-medium rounded-xl transition-all ${
-                    activeTab === 'roadmap' ? 'bg-brand-500/10 text-brand-400 font-semibold border border-brand-500/20' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
-                  }`}
-                >
-                  <FileText className="w-4.5 h-4.5" />
-                  {isSidebarOpen && <span>Admission Roadmap</span>}
-                </button>
-
-                <button 
                   onClick={() => setActiveTab('chatbot')} 
                   className={`w-full flex items-center gap-3.5 px-4.5 py-3 text-sm font-medium rounded-xl transition-all ${
                     activeTab === 'chatbot' ? 'bg-brand-500/10 text-brand-400 font-semibold border border-brand-500/20' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
@@ -1214,10 +1250,6 @@ export default function App() {
                           <span className="text-base font-bold text-slate-200">{profileData.preferred_branch}</span>
                         </div>
                         <div>
-                          <span className="block text-xs text-slate-400">Income Eligible</span>
-                          <span className="text-base font-bold text-brand-400">{profileData.family_income <= 250000 ? 'JVD Eligible' : 'Standard Fee'}</span>
-                        </div>
-                        <div>
                           <span className="block text-xs text-slate-400">Total Bookmarked</span>
                           <span className="text-base font-bold text-slate-200">{savedColleges.length} Colleges</span>
                         </div>
@@ -1247,17 +1279,17 @@ export default function App() {
                     {/* Brief Recommendations preview */}
                     <div className="glass-panel p-6 space-y-4">
                       <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <h3 className="text-base font-bold flex items-center gap-2"><Sparkles className="w-4.5 h-4.5 text-brand-400" /> College Picks preview</h3>
-                        <button onClick={() => setActiveTab('colleges')} className="text-xs text-brand-400 hover:text-brand-300 font-semibold">View All ({LOCAL_COLLEGES.length})</button>
+                        <h3 className="text-base font-bold flex items-center gap-2"><Sparkles className="w-4.5 h-4.5 text-brand-400" /> Recently Viewed</h3>
+                        <button onClick={() => setActiveTab('compare')} className="text-xs text-brand-400 hover:text-brand-300 font-semibold">View Comparison</button>
                       </div>
-                      
-                      {recommendations ? (
+
+                      {recentlyViewed.length > 0 ? (
                         <div className="space-y-3">
-                          {(recommendations.preferred || []).slice(0, 2).map((col, index) => (
+                          {recentlyViewed.slice(0, 2).map((col, index) => (
                             <div key={index} className="p-3.5 bg-slate-950/60 border border-slate-800/80 rounded-xl flex items-center justify-between">
                               <div>
                                 <h4 className="text-sm font-bold text-slate-200 truncate max-w-[280px]">{col.name}</h4>
-                                <p className="text-xs text-slate-400 mt-1">Average Pkg: {col.average_package} | Fees: {col.fees}</p>
+                                <p className="text-xs text-slate-400 mt-1">Average Pkg: {col.average_package || col.avg_pkg} | Fees: {col.fees || `₹${col.fee.toLocaleString()}/year`}</p>
                               </div>
                               <button 
                                 onClick={() => handleSaveCollege(col.name)}
@@ -1273,7 +1305,11 @@ export default function App() {
                           ))}
                         </div>
                       ) : (
-                        <p className="text-sm text-slate-400">Loading recommendations...</p>
+                        <div className="text-center py-8 bg-slate-950/30 border border-dashed border-slate-800/60 rounded-xl">
+                          <Sparkles className="w-8 h-8 text-brand-400 mx-auto mb-3" />
+                          <p className="text-sm text-slate-300">No recently viewed colleges yet.</p>
+                          <p className="text-xs text-slate-500 mt-1">Compare two colleges in the Comparison tab and they will appear here.</p>
+                        </div>
                       )}
                     </div>
 

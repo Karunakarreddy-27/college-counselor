@@ -1,0 +1,64 @@
+{
+    "google_mock_uid_554433": [
+        {
+            "sender": "user",
+            "text": "Can I get CSE with 25k rank?"
+        },
+        {
+            "sender": "counselor",
+            "text": "To check your exact admission chances and get a personalized counseling list, please complete your profile details. Here is cutoff data from matching records in our vector database:\n\n**Andhra University College of Engineering (Autonomous), Visakhapatnam** cutoffs are listed as:\n`CSE: 850 (Gen), ECE: 2200 (Gen), EEE: 4500 (Gen), ME: 6800 (Gen), CE: 9000 (Gen)`\n\n**JNTUK College of Engineering, Kakinada** cutoffs are listed as:\n`CSE: 1200 (Gen), CSE-AI&ML: 1800 (Gen), ECE: 3000 (Gen), EEE: 5500 (Gen), ME: 8000 (Gen)`\n\n**JNTUA College of Engineering, Anantapur** cutoffs are listed as:\n`CSE: 2800 (Gen), ECE: 4500 (Gen), EEE: 7500 (Gen), ME: 11000 (Gen), CE: 14000 (Gen)`\n"
+        },
+        {
+            "sender": "user",
+            "text": "Required certificates for EAPCET"
+        },
+        {
+            "sender": "counselor",
+            "text": "Here is the details retrieved from the Andhra Pradesh College Knowledge Base matching your question:\n\n**Source Document Snippet:**\nCollege Name: SRM University AP, Amaravati\nLocation: Amaravati, Andhra Pradesh\nWebsite: https://srmap.edu.in\nAccreditation: UGC Recognized, Private State University | NAAC: NAAC A+ Grade | NIRF: Part of SRM Group (NIRF Rank: 28 in Engineering)\nType: Private University\nBranches Offered: CSE, CSE-AI&ML, CSE-Data Science, ECE, EEE, ME, CE\nFees: B.Tech CSE: \u20b92,50,000/year, ECE/EEE: \u20b91,75,000/year | Hostel: Hostel Fee: \u20b91,10,000 to \u20b91,50,000/year\nCutoffs: SRMJEEE rank under 15000 for CSE, AP EAPCET rank under 10000 for Merit concession\nPlacements: Avg \u20b97.8 LPA, Highest \u20b950.0 LPA, Percent 95%\nRecruiters: Amazon, Google, PayPal, Barclays, TCS, Wipro, Optum\nScholarships: SRM Founder's Scholarship (100% waiver for EAPCET < 1000 or JEE > 99%), Merit Scholarships (25%-75% discount)\n\n\n**Source Document Snippet:**\nCollege Name: Anil Neerukonda Institute of Technology & Sciences (ANITS), Visakhapatnam\nLocation: Visakhapatnam, Andhra Pradesh\nWebsite: https://www.anits.edu.in\nAccreditation: AICTE Approved, Autonomous, NBA | NAAC: NAAC A Grade | NIRF: NIRF Rank: 201-250 Band\nType: Private Autonomous\nBranches Offered: CSE, CSE-AI&ML, CSE-DS, IT, ECE, EEE, ME, CE, Chemical\nFees: B.Tech: \u20b966,000/year (Convenor Quota) | Hostel: Hostel Fee: \u20b968,000/year\nCutoffs: CSE: 5800 (Gen), CSE-AIML: 7800 (Gen), ECE: 12000 (Gen), EEE: 22000 (Gen), ME: 35000 (Gen)\nPlacements: Avg \u20b94.8 LPA, Highest \u20b920.0 LPA, Percent 86%\nRecruiters: Infosys, Wipro, Cognizant, AWS, TCS, Capgemini, Musigma\nScholarships: JVD government scheme benefits, college merit concessions for ranks < 5000 in EAPCET\n\n\n**Source Document Snippet:**\nCollege Name: Vignan's Foundation for Science, Technology and Research (Vignan University), Guntur\nLocation: Vadlamudi, Guntur, Andhra Pradesh\nWebsite: https://www.vignan.ac.in\nAccreditation: AICTE Approved, Deemed University, NBA | NAAC: NAAC A+ Grade | NIRF: NIRF Rank: 85 (Engineering)\nType: Private Deemed University\nBranches Offered: CSE, CSE-AI&ML, CSE-DS, CSE-CS, ECE, EEE, ME, CE, Biotech, Food Tech\nFees: B.Tech CSE: \u20b92,20,000/year, ECE: \u20b91,80,000/year, Food Tech: \u20b91,50,000/year | Hostel: Hostel Fee: \u20b985,000 to \u20b91,15,000/year\nCutoffs: V-SAT Rank under 15000, AP EAPCET rank under 10000 for top scholarships\nPlacements: Avg \u20b95.6 LPA, Highest \u20b944.0 LPA, Percent 93%\nRecruiters: Amazon, TCS, Cognizant, Wipro, Accenture, Voltas, HCL\nScholarships: Vignan Merit Scholarships (25% to 75% fee waivers based on EAPCET/VSAT ranks)\n\n\n*Note: Complete your profile form to receive personalized recommendations.*"
+        },
+        {
+            "sender": "user",
+            "text": "Compare VIT AP vs SRM AP"
+        },
+        {
+            "sender": "counselor",
+            "text": "To compare colleges, please go to the **College Comparison** page, select the universities you'd like to compare side-by-side, and click compare. Alternatively, here is some retrieved info from the database regarding your query:\n\n* VIT-AP University, Amaravati\n* SRM University AP, Amaravati\n* Vasireddy Venkatadri Institute of Technology (VVIT), Guntur"
+        }
+    ],
+    "user_e0636f7d1c544e66a49fe0e865bc4c34": [
+        {
+            "sender": "user",
+            "text": "Can I get CSE with 25k rank?"
+        },
+        {
+            "sender": "counselor",
+            "text": "To check your exact admission chances and get a personalized counseling list, please complete your profile details. Here is cutoff data from matching records in our vector database:\n\n**Andhra University College of Engineering (Autonomous), Visakhapatnam** cutoffs are listed as:\n`CSE: 850 (Gen), ECE: 2200 (Gen), EEE: 4500 (Gen), ME: 6800 (Gen), CE: 9000 (Gen)`\n\n**JNTUK College of Engineering, Kakinada** cutoffs are listed as:\n`CSE: 1200 (Gen), CSE-AI&ML: 1800 (Gen), ECE: 3000 (Gen), EEE: 5500 (Gen), ME: 8000 (Gen)`\n\n**JNTUA College of Engineering, Anantapur** cutoffs are listed as:\n`CSE: 2800 (Gen), ECE: 4500 (Gen), EEE: 7500 (Gen), ME: 11000 (Gen), CE: 14000 (Gen)`\n"
+        }
+    ],
+    "user_84cc403910fd45c19f0ba14296eb9619": [
+        {
+            "sender": "user",
+            "text": "Can I get CSE with 25k rank?"
+        },
+        {
+            "sender": "counselor",
+            "text": "To check your exact admission chances and get a personalized counseling list, please complete your profile details. Here is cutoff data from matching records in our vector database:\n\n**Andhra University College of Engineering (Autonomous), Visakhapatnam** cutoffs are listed as:\n`CSE: 850 (Gen), ECE: 2200 (Gen), EEE: 4500 (Gen), ME: 6800 (Gen), CE: 9000 (Gen)`\n\n**JNTUK College of Engineering, Kakinada** cutoffs are listed as:\n`CSE: 1200 (Gen), CSE-AI&ML: 1800 (Gen), ECE: 3000 (Gen), EEE: 5500 (Gen), ME: 8000 (Gen)`\n\n**JNTUA College of Engineering, Anantapur** cutoffs are listed as:\n`CSE: 2800 (Gen), ECE: 4500 (Gen), EEE: 7500 (Gen), ME: 11000 (Gen), CE: 14000 (Gen)`\n"
+        },
+        {
+            "sender": "user",
+            "text": "hi"
+        },
+        {
+            "sender": "counselor",
+            "text": "Here is the details retrieved from the Andhra Pradesh College Knowledge Base matching your question:\n\n**Source Document Snippet:**\nCollege Name: Andhra University College of Engineering (Autonomous), Visakhapatnam\nLocation: Visakhapatnam, Andhra Pradesh\nWebsite: https://www.andhrauniversity.edu.in\nAccreditation: AICTE Approved, NBA Accredited | NAAC: NAAC A++ Grade | NIRF: NIRF Rank: 94\nType: Government\nBranches Offered: CSE, AI&DS, ECE, EEE, ME, CE, Chem, IT\nFees: CSE: \u20b915,000/year (Regular), \u20b950,000/year (Self-Finance) | Hostel: Hostel Fee: \u20b930,000/year (including mess)\nCutoffs: CSE: 850 (Gen), ECE: 2200 (Gen), EEE: 4500 (Gen), ME: 6800 (Gen), CE: 9000 (Gen)\nPlacements: Avg \u20b97.5 LPA, Highest \u20b932.0 LPA, Percent 88%\nRecruiters: TCS, Infosys, Wipro, Cognizant, Amazon, Oracle\nScholarships: Merit-based scholarships, full Jagananna Vidya Deevena fee reimbursement eligible, sports quota waiver\n\n\n**Source Document Snippet:**\nCollege Name: JNTUK College of Engineering, Kakinada\nLocation: Kakinada, Andhra Pradesh\nWebsite: https://www.jntukucek.ac.in\nAccreditation: AICTE Approved, NBA Accredited | NAAC: NAAC A+ Grade | NIRF: NIRF Rank: 110\nType: Government\nBranches Offered: CSE, ECE, EEE, ME, CE, CSE-AI&ML, Chemical\nFees: CSE: \u20b910,000/year (Regular), \u20b945,000/year (Self-Finance) | Hostel: Hostel Fee: \u20b928,000/year\nCutoffs: CSE: 1200 (Gen), CSE-AI&ML: 1800 (Gen), ECE: 3000 (Gen), EEE: 5500 (Gen), ME: 8000 (Gen)\nPlacements: Avg \u20b96.8 LPA, Highest \u20b928.0 LPA, Percent 85%\nRecruiters: L&T, TCS, Wipro, ACC, Microsoft, Cisco\nScholarships: Jagananna Vidya Deevena (JVD) eligibility, State Merit Scholarships\n\n\n**Source Document Snippet:**\nCollege Name: JNTUA College of Engineering, Anantapur\nLocation: Anantapur, Andhra Pradesh\nWebsite: https://www.jntuaceam.ac.in\nAccreditation: AICTE Approved, NBA Accredited | NAAC: NAAC A Grade | NIRF: NIRF Rank: 135\nType: Government\nBranches Offered: CSE, ECE, EEE, ME, CE, Chemical\nFees: CSE/ECE/EEE: \u20b910,000/year (Regular) | Hostel: Hostel Fee: \u20b925,000/year\nCutoffs: CSE: 2800 (Gen), ECE: 4500 (Gen), EEE: 7500 (Gen), ME: 11000 (Gen), CE: 14000 (Gen)\nPlacements: Avg \u20b95.5 LPA, Highest \u20b918.0 LPA, Percent 80%\nRecruiters: TCS, Cognizant, Accenture, Hexaware, Hyundai\nScholarships: Full State Fee Reimbursement, Jagananna Vasathi Deevena support\n\n\n*Note: Complete your profile form to receive personalized recommendations.*"
+        },
+        {
+            "sender": "user",
+            "text": "hello"
+        },
+        {
+            "sender": "counselor",
+            "text": "Here is the details retrieved from the Andhra Pradesh College Knowledge Base matching your question:\n\n**Source Document Snippet:**\nCollege Name: Andhra University College of Engineering (Autonomous), Visakhapatnam\nLocation: Visakhapatnam, Andhra Pradesh\nWebsite: https://www.andhrauniversity.edu.in\nAccreditation: AICTE Approved, NBA Accredited | NAAC: NAAC A++ Grade | NIRF: NIRF Rank: 94\nType: Government\nBranches Offered: CSE, AI&DS, ECE, EEE, ME, CE, Chem, IT\nFees: CSE: \u20b915,000/year (Regular), \u20b950,000/year (Self-Finance) | Hostel: Hostel Fee: \u20b930,000/year (including mess)\nCutoffs: CSE: 850 (Gen), ECE: 2200 (Gen), EEE: 4500 (Gen), ME: 6800 (Gen), CE: 9000 (Gen)\nPlacements: Avg \u20b97.5 LPA, Highest \u20b932.0 LPA\nScholarships: Merit-based scholarships, full Jagananna Vidya Deevena fee reimbursement eligible, sports quota waiver\n\n\n**Source Document Snippet:**\nCollege Name: JNTUK College of Engineering, Kakinada\nLocation: Kakinada, Andhra Pradesh\nWebsite: https://www.jntukucek.ac.in\nAccreditation: AICTE Approved, NBA Accredited | NAAC: NAAC A+ Grade | NIRF: NIRF Rank: 110\nType: Government\nBranches Offered: CSE, ECE, EEE, ME, CE, CSE-AI&ML, Chemical\nFees: CSE: \u20b910,000/year (Regular), \u20b945,000/year (Self-Finance) | Hostel: Hostel Fee: \u20b928,000/year\nCutoffs: CSE: 1200 (Gen), CSE-AI&ML: 1800 (Gen), ECE: 3000 (Gen), EEE: 5500 (Gen), ME: 8000 (Gen)\nPlacements: Avg \u20b96.8 LPA, Highest \u20b928.0 LPA\nScholarships: Jagananna Vidya Deevena (JVD) eligibility, State Merit Scholarships\n\n\n**Source Document Snippet:**\nCollege Name: JNTUA College of Engineering, Anantapur\nLocation: Anantapur, Andhra Pradesh\nWebsite: https://www.jntuaceam.ac.in\nAccreditation: AICTE Approved, NBA Accredited | NAAC: NAAC A Grade | NIRF: NIRF Rank: 135\nType: Government\nBranches Offered: CSE, ECE, EEE, ME, CE, Chemical\nFees: CSE/ECE/EEE: \u20b910,000/year (Regular) | Hostel: Hostel Fee: \u20b925,000/year\nCutoffs: CSE: 2800 (Gen), ECE: 4500 (Gen), EEE: 7500 (Gen), ME: 11000 (Gen), CE: 14000 (Gen)\nPlacements: Avg \u20b95.5 LPA, Highest \u20b918.0 LPA\nScholarships: Full State Fee Reimbursement, Jagananna Vasathi Deevena support\n\n\n*Note: Complete your profile form to receive personalized recommendations.*"
+        }
+    ]
+}

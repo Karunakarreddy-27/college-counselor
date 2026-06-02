@@ -1,0 +1,42 @@
+{
+    "user_e0636f7d1c544e66a49fe0e865bc4c34": {
+        "userId": "user_e0636f7d1c544e66a49fe0e865bc4c34",
+        "name": "karna",
+        "stream": "MPC",
+        "percentage": 90.0,
+        "mathMarks": 90.0,
+        "physicsMarks": 90.0,
+        "chemistryMarks": 90.0,
+        "rank": 50000,
+        "interests": [
+            "Technology & Coding",
+            "Artificial Intelligence"
+        ],
+        "preferred_branch": "CSE",
+        "budget": 150000.0,
+        "gov_preference": "Any",
+        "hostel_required": false,
+        "category": "OC",
+        "family_income": 300000.0
+    },
+    "user_84cc403910fd45c19f0ba14296eb9619": {
+        "userId": "user_84cc403910fd45c19f0ba14296eb9619",
+        "name": "Jagadeesh Kumar",
+        "stream": "MPC",
+        "percentage": 90.0,
+        "mathMarks": 90.0,
+        "physicsMarks": 90.0,
+        "chemistryMarks": 90.0,
+        "rank": 50000,
+        "interests": [
+            "Technology & Coding",
+            "Artificial Intelligence"
+        ],
+        "preferred_branch": "CSE",
+        "budget": 150000.0,
+        "gov_preference": "Any",
+        "hostel_required": false,
+        "category": "OC",
+        "family_income": 300000.0
+    }
+}

@@ -1,0 +1,701 @@
+{
+    "google_mock_uid_554433": {
+        "profile": {
+            "name": "karna",
+            "stream": "MPC",
+            "percentage": "90",
+            "mathMarks": "90",
+            "physicsMarks": "90",
+            "chemistryMarks": "90",
+            "rank": 60000,
+            "interests": [
+                "Technology & Coding"
+            ],
+            "preferred_branch": "CSE",
+            "budget": 150000.0,
+            "gov_preference": "Any",
+            "hostel_required": true,
+            "category": "OC",
+            "family_income": 300000,
+            "userId": "google_mock_uid_554433"
+        },
+        "branch_suggestions": [
+            {
+                "branch": "CSE (Computer Science & Engineering)",
+                "reason": "Top alignment with your interest in technology, coding, and software development."
+            }
+        ],
+        "preferred_branch_analysis": {},
+        "reality_check": {
+            "has_limitations": true,
+            "limitations": [
+                "Your rank (60,000) is above recent cutoff ranges for CSE branches in top-tier Government Colleges.",
+                "High competition for Computer Science leaves very limited seat availability for ranks above 15,000.",
+                "At a rank of 60,000, securing seats in top-20 colleges for core branches via Convenor Quota is highly competitive."
+            ],
+            "suggestions": [
+                "Keep CSE as a target, but prioritize adding Private Autonomous colleges on your web options.",
+                "Explore related specializations like AI & ML, Data Science, or Information Technology (IT) which typically have slightly higher rank cutoffs.",
+                "Consider newer branches or local region colleges where cutoff ranks are more relaxed.",
+                "We recommend listing 25+ colleges in your web options list during counseling to avoid missing out on seat allocation.",
+                "Include colleges in tier-3 cities or newer colleges in your options list (e.g. Santhiram, Anantha Lakshmi).",
+                "Look into branches like ECE, EEE, or Mech which have cutoffs extending beyond 40,000-60,000.",
+                "Explore management quota (B-Category seats) options if your budget allows (typically \u20b91.5L to \u20b92.5L per year)."
+            ]
+        },
+        "recommendations": {
+            "dream": [
+                {
+                    "name": "Andhra University College of Engineering (Autonomous), Visakhapatnam",
+                    "location": "Visakhapatnam, Andhra Pradesh",
+                    "website": "https://www.andhrauniversity.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 94",
+                    "fees": "CSE: \u20b915,000/year (Regular), \u20b950,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b930,000/year (including mess)",
+                    "average_package": "\u20b97.5 LPA",
+                    "highest_package": "\u20b932.0 LPA",
+                    "placement_pct": "88%",
+                    "scholarships": "Merit-based scholarships, full Jagananna Vidya Deevena fee reimbursement eligible, sports quota waiver",
+                    "cutoff_rank": 850,
+                    "explain_why": "Aspirational college. Cutoff rank (850) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b932.0 LPA, Avg: \u20b97.5 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "JNTUK College of Engineering, Kakinada",
+                    "location": "Kakinada, Andhra Pradesh",
+                    "website": "https://www.jntukucek.ac.in",
+                    "naac": "NAAC A+ Grade",
+                    "nirf": "NIRF Rank: 110",
+                    "fees": "CSE: \u20b910,000/year (Regular), \u20b945,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b928,000/year",
+                    "average_package": "\u20b96.8 LPA",
+                    "highest_package": "\u20b928.0 LPA",
+                    "placement_pct": "85%",
+                    "scholarships": "Jagananna Vidya Deevena (JVD) eligibility, State Merit Scholarships",
+                    "cutoff_rank": 1200,
+                    "explain_why": "Aspirational college. Cutoff rank (1200) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b928.0 LPA, Avg: \u20b96.8 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "Sri Venkateswara University College of Engineering (SVUCE), Tirupati",
+                    "location": "Tirupati, Andhra Pradesh",
+                    "website": "https://www.svuce.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 105",
+                    "fees": "B.Tech branches: \u20b915,000/year (Regular)",
+                    "hostel_fee": "Hostel Fee: \u20b932,000/year",
+                    "average_package": "\u20b96.2 LPA",
+                    "highest_package": "\u20b922.0 LPA",
+                    "placement_pct": "82%",
+                    "scholarships": "JVD Fee Reimbursement, Merit Scholarships, SVU Alumni Scholarships",
+                    "cutoff_rank": 2000,
+                    "explain_why": "Aspirational college. Cutoff rank (2000) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b922.0 LPA, Avg: \u20b96.2 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                }
+            ],
+            "target": [],
+            "safe": []
+        },
+        "roadmap": {
+            "required_documents": [
+                "AP EAPCET / EAMCET Hall Ticket",
+                "AP EAPCET / EAMCET Rank Card",
+                "Intermediate Marks Memo (10+2 Certificate)",
+                "SSC Marks Memo (10th Certificate)",
+                "Study Certificates (Class 6 to Intermediate for Local status)",
+                "Aadhaar Card",
+                "Income Certificate (issued after Jan 1st of current year for fee reimbursement)",
+                "Caste/Category Certificate (if applicable for reservation)"
+            ],
+            "next_steps": [
+                {
+                    "step": 1,
+                    "title": "Counseling Registration",
+                    "description": "Pay processing fee online on the APSCHE EAPCET website once the official schedule is released."
+                },
+                {
+                    "step": 2,
+                    "title": "Certificate Verification",
+                    "description": "Verification of uploaded documents online. Visit helpline centers only if discrepancies are flagged."
+                },
+                {
+                    "step": 3,
+                    "title": "Web Option Entry",
+                    "description": "Log in to the counseling portal and enter college-branch codes. Put all 'Dream' options first, followed by 'Target', and then 'Safe' backups."
+                },
+                {
+                    "step": 4,
+                    "title": "Seat Allotment",
+                    "description": "Review the allotted college based on rank and reservation rules. You can opt for 'Self-Reporting' while participating in Phase 2."
+                },
+                {
+                    "step": 5,
+                    "title": "Physical Reporting",
+                    "description": "Visit the allotted college with original certificates, allotment order, and join within the specified timeline."
+                }
+            ]
+        }
+    },
+    "mock_uid_4gl6m1eyy": {
+        "profile": {
+            "name": "Karunakar Reddy",
+            "stream": "MPC",
+            "percentage": "97",
+            "mathMarks": "85",
+            "physicsMarks": "90",
+            "chemistryMarks": "70",
+            "rank": 60000,
+            "interests": [
+                "Artificial Intelligence",
+                "Data Science",
+                "Technology & Coding"
+            ],
+            "preferred_branch": "CSE",
+            "budget": 150000.0,
+            "gov_preference": "Any",
+            "hostel_required": true,
+            "category": "OC",
+            "family_income": 300000,
+            "userId": "mock_uid_4gl6m1eyy"
+        },
+        "branch_suggestions": [
+            {
+                "branch": "CSE (Computer Science & Engineering)",
+                "reason": "Top alignment with your interest in technology, coding, and software development."
+            },
+            {
+                "branch": "AI & ML / Data Science",
+                "reason": "Specifically tailored to intelligence models, analytics, and robotics algorithms."
+            }
+        ],
+        "preferred_branch_analysis": {},
+        "reality_check": {
+            "has_limitations": true,
+            "limitations": [
+                "Your rank (60,000) is above recent cutoff ranges for CSE branches in top-tier Government Colleges.",
+                "High competition for Computer Science leaves very limited seat availability for ranks above 15,000.",
+                "At a rank of 60,000, securing seats in top-20 colleges for core branches via Convenor Quota is highly competitive."
+            ],
+            "suggestions": [
+                "Keep CSE as a target, but prioritize adding Private Autonomous colleges on your web options.",
+                "Explore related specializations like AI & ML, Data Science, or Information Technology (IT) which typically have slightly higher rank cutoffs.",
+                "Consider newer branches or local region colleges where cutoff ranks are more relaxed.",
+                "We recommend listing 25+ colleges in your web options list during counseling to avoid missing out on seat allocation.",
+                "Include colleges in tier-3 cities or newer colleges in your options list (e.g. Santhiram, Anantha Lakshmi).",
+                "Look into branches like ECE, EEE, or Mech which have cutoffs extending beyond 40,000-60,000.",
+                "Explore management quota (B-Category seats) options if your budget allows (typically \u20b91.5L to \u20b92.5L per year)."
+            ]
+        },
+        "recommendations": {
+            "dream": [
+                {
+                    "name": "Andhra University College of Engineering (Autonomous), Visakhapatnam",
+                    "location": "Visakhapatnam, Andhra Pradesh",
+                    "website": "https://www.andhrauniversity.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 94",
+                    "fees": "CSE: \u20b915,000/year (Regular), \u20b950,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b930,000/year (including mess)",
+                    "average_package": "\u20b97.5 LPA",
+                    "highest_package": "\u20b932.0 LPA",
+                    "placement_pct": "88%",
+                    "scholarships": "Merit-based scholarships, full Jagananna Vidya Deevena fee reimbursement eligible, sports quota waiver",
+                    "cutoff_rank": 850,
+                    "explain_why": "Aspirational college. Cutoff rank (850) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b932.0 LPA, Avg: \u20b97.5 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "JNTUK College of Engineering, Kakinada",
+                    "location": "Kakinada, Andhra Pradesh",
+                    "website": "https://www.jntukucek.ac.in",
+                    "naac": "NAAC A+ Grade",
+                    "nirf": "NIRF Rank: 110",
+                    "fees": "CSE: \u20b910,000/year (Regular), \u20b945,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b928,000/year",
+                    "average_package": "\u20b96.8 LPA",
+                    "highest_package": "\u20b928.0 LPA",
+                    "placement_pct": "85%",
+                    "scholarships": "Jagananna Vidya Deevena (JVD) eligibility, State Merit Scholarships",
+                    "cutoff_rank": 1200,
+                    "explain_why": "Aspirational college. Cutoff rank (1200) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b928.0 LPA, Avg: \u20b96.8 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "Sri Venkateswara University College of Engineering (SVUCE), Tirupati",
+                    "location": "Tirupati, Andhra Pradesh",
+                    "website": "https://www.svuce.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 105",
+                    "fees": "B.Tech branches: \u20b915,000/year (Regular)",
+                    "hostel_fee": "Hostel Fee: \u20b932,000/year",
+                    "average_package": "\u20b96.2 LPA",
+                    "highest_package": "\u20b922.0 LPA",
+                    "placement_pct": "82%",
+                    "scholarships": "JVD Fee Reimbursement, Merit Scholarships, SVU Alumni Scholarships",
+                    "cutoff_rank": 2000,
+                    "explain_why": "Aspirational college. Cutoff rank (2000) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b922.0 LPA, Avg: \u20b96.2 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                }
+            ],
+            "target": [],
+            "safe": []
+        },
+        "roadmap": {
+            "required_documents": [
+                "AP EAPCET / EAMCET Hall Ticket",
+                "AP EAPCET / EAMCET Rank Card",
+                "Intermediate Marks Memo (10+2 Certificate)",
+                "SSC Marks Memo (10th Certificate)",
+                "Study Certificates (Class 6 to Intermediate for Local status)",
+                "Aadhaar Card",
+                "Income Certificate (issued after Jan 1st of current year for fee reimbursement)",
+                "Caste/Category Certificate (if applicable for reservation)"
+            ],
+            "next_steps": [
+                {
+                    "step": 1,
+                    "title": "Counseling Registration",
+                    "description": "Pay processing fee online on the APSCHE EAPCET website once the official schedule is released."
+                },
+                {
+                    "step": 2,
+                    "title": "Certificate Verification",
+                    "description": "Verification of uploaded documents online. Visit helpline centers only if discrepancies are flagged."
+                },
+                {
+                    "step": 3,
+                    "title": "Web Option Entry",
+                    "description": "Log in to the counseling portal and enter college-branch codes. Put all 'Dream' options first, followed by 'Target', and then 'Safe' backups."
+                },
+                {
+                    "step": 4,
+                    "title": "Seat Allotment",
+                    "description": "Review the allotted college based on rank and reservation rules. You can opt for 'Self-Reporting' while participating in Phase 2."
+                },
+                {
+                    "step": 5,
+                    "title": "Physical Reporting",
+                    "description": "Visit the allotted college with original certificates, allotment order, and join within the specified timeline."
+                }
+            ]
+        }
+    },
+    "mock_uid_igzeji07z": {
+        "profile": {
+            "name": "karna",
+            "stream": "MPC",
+            "percentage": "90",
+            "mathMarks": "90",
+            "physicsMarks": "90",
+            "chemistryMarks": "90",
+            "rank": 60000,
+            "interests": [
+                "Technology & Coding"
+            ],
+            "preferred_branch": "CSE",
+            "budget": 150000.0,
+            "gov_preference": "Any",
+            "hostel_required": true,
+            "category": "OC",
+            "family_income": 300000,
+            "userId": "mock_uid_igzeji07z"
+        },
+        "branch_suggestions": [
+            {
+                "branch": "CSE (Computer Science & Engineering)",
+                "reason": "Top alignment with your interest in technology, coding, and software development."
+            }
+        ],
+        "preferred_branch_analysis": {},
+        "reality_check": {
+            "has_limitations": true,
+            "limitations": [
+                "Your rank (60,000) is above recent cutoff ranges for CSE branches in top-tier Government Colleges.",
+                "High competition for Computer Science leaves very limited seat availability for ranks above 15,000.",
+                "At a rank of 60,000, securing seats in top-20 colleges for core branches via Convenor Quota is highly competitive."
+            ],
+            "suggestions": [
+                "Keep CSE as a target, but prioritize adding Private Autonomous colleges on your web options.",
+                "Explore related specializations like AI & ML, Data Science, or Information Technology (IT) which typically have slightly higher rank cutoffs.",
+                "Consider newer branches or local region colleges where cutoff ranks are more relaxed.",
+                "We recommend listing 25+ colleges in your web options list during counseling to avoid missing out on seat allocation.",
+                "Include colleges in tier-3 cities or newer colleges in your options list (e.g. Santhiram, Anantha Lakshmi).",
+                "Look into branches like ECE, EEE, or Mech which have cutoffs extending beyond 40,000-60,000.",
+                "Explore management quota (B-Category seats) options if your budget allows (typically \u20b91.5L to \u20b92.5L per year)."
+            ]
+        },
+        "recommendations": {
+            "dream": [
+                {
+                    "name": "Andhra University College of Engineering (Autonomous), Visakhapatnam",
+                    "location": "Visakhapatnam, Andhra Pradesh",
+                    "website": "https://www.andhrauniversity.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 94",
+                    "fees": "CSE: \u20b915,000/year (Regular), \u20b950,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b930,000/year (including mess)",
+                    "average_package": "\u20b97.5 LPA",
+                    "highest_package": "\u20b932.0 LPA",
+                    "placement_pct": "88%",
+                    "scholarships": "Merit-based scholarships, full Jagananna Vidya Deevena fee reimbursement eligible, sports quota waiver",
+                    "cutoff_rank": 850,
+                    "explain_why": "Aspirational college. Cutoff rank (850) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b932.0 LPA, Avg: \u20b97.5 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "JNTUK College of Engineering, Kakinada",
+                    "location": "Kakinada, Andhra Pradesh",
+                    "website": "https://www.jntukucek.ac.in",
+                    "naac": "NAAC A+ Grade",
+                    "nirf": "NIRF Rank: 110",
+                    "fees": "CSE: \u20b910,000/year (Regular), \u20b945,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b928,000/year",
+                    "average_package": "\u20b96.8 LPA",
+                    "highest_package": "\u20b928.0 LPA",
+                    "placement_pct": "85%",
+                    "scholarships": "Jagananna Vidya Deevena (JVD) eligibility, State Merit Scholarships",
+                    "cutoff_rank": 1200,
+                    "explain_why": "Aspirational college. Cutoff rank (1200) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b928.0 LPA, Avg: \u20b96.8 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "Sri Venkateswara University College of Engineering (SVUCE), Tirupati",
+                    "location": "Tirupati, Andhra Pradesh",
+                    "website": "https://www.svuce.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 105",
+                    "fees": "B.Tech branches: \u20b915,000/year (Regular)",
+                    "hostel_fee": "Hostel Fee: \u20b932,000/year",
+                    "average_package": "\u20b96.2 LPA",
+                    "highest_package": "\u20b922.0 LPA",
+                    "placement_pct": "82%",
+                    "scholarships": "JVD Fee Reimbursement, Merit Scholarships, SVU Alumni Scholarships",
+                    "cutoff_rank": 2000,
+                    "explain_why": "Aspirational college. Cutoff rank (2000) is highly competitive relative to your rank (60000). However, it offers stellar placements (Highest: \u20b922.0 LPA, Avg: \u20b96.2 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                }
+            ],
+            "target": [],
+            "safe": []
+        },
+        "roadmap": {
+            "required_documents": [
+                "AP EAPCET / EAMCET Hall Ticket",
+                "AP EAPCET / EAMCET Rank Card",
+                "Intermediate Marks Memo (10+2 Certificate)",
+                "SSC Marks Memo (10th Certificate)",
+                "Study Certificates (Class 6 to Intermediate for Local status)",
+                "Aadhaar Card",
+                "Income Certificate (issued after Jan 1st of current year for fee reimbursement)",
+                "Caste/Category Certificate (if applicable for reservation)"
+            ],
+            "next_steps": [
+                {
+                    "step": 1,
+                    "title": "Counseling Registration",
+                    "description": "Pay processing fee online on the APSCHE EAPCET website once the official schedule is released."
+                },
+                {
+                    "step": 2,
+                    "title": "Certificate Verification",
+                    "description": "Verification of uploaded documents online. Visit helpline centers only if discrepancies are flagged."
+                },
+                {
+                    "step": 3,
+                    "title": "Web Option Entry",
+                    "description": "Log in to the counseling portal and enter college-branch codes. Put all 'Dream' options first, followed by 'Target', and then 'Safe' backups."
+                },
+                {
+                    "step": 4,
+                    "title": "Seat Allotment",
+                    "description": "Review the allotted college based on rank and reservation rules. You can opt for 'Self-Reporting' while participating in Phase 2."
+                },
+                {
+                    "step": 5,
+                    "title": "Physical Reporting",
+                    "description": "Visit the allotted college with original certificates, allotment order, and join within the specified timeline."
+                }
+            ]
+        }
+    },
+    "user_e0636f7d1c544e66a49fe0e865bc4c34": {
+        "profile": {
+            "userId": "user_e0636f7d1c544e66a49fe0e865bc4c34",
+            "name": "karna",
+            "stream": "MPC",
+            "percentage": 90.0,
+            "mathMarks": 90.0,
+            "physicsMarks": 90.0,
+            "chemistryMarks": 90.0,
+            "rank": 50000,
+            "interests": [
+                "Technology & Coding",
+                "Artificial Intelligence"
+            ],
+            "preferred_branch": "CSE",
+            "budget": 150000.0,
+            "gov_preference": "Any",
+            "hostel_required": false,
+            "category": "OC",
+            "family_income": 300000.0
+        },
+        "branch_suggestions": [
+            {
+                "branch": "CSE (Computer Science & Engineering)",
+                "reason": "Top alignment with your interest in technology, coding, and software development."
+            },
+            {
+                "branch": "AI & ML / Data Science",
+                "reason": "Specifically tailored to intelligence models, analytics, and robotics algorithms."
+            }
+        ],
+        "preferred_branch_analysis": {},
+        "reality_check": {
+            "has_limitations": false,
+            "limitations": [],
+            "suggestions": []
+        },
+        "recommendations": {
+            "dream": [
+                {
+                    "name": "Andhra University College of Engineering (Autonomous), Visakhapatnam",
+                    "location": "Visakhapatnam, Andhra Pradesh",
+                    "website": "https://www.andhrauniversity.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 94",
+                    "fees": "CSE: \u20b915,000/year (Regular), \u20b950,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b930,000/year (including mess)",
+                    "average_package": "\u20b97.5 LPA",
+                    "highest_package": "\u20b932.0 LPA",
+                    "placement_pct": "88%",
+                    "scholarships": "Merit-based scholarships, full Jagananna Vidya Deevena fee reimbursement eligible, sports quota waiver",
+                    "cutoff_rank": 850,
+                    "explain_why": "Aspirational college. Cutoff rank (850) is highly competitive relative to your rank (50000). However, it offers stellar placements (Highest: \u20b932.0 LPA, Avg: \u20b97.5 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "JNTUK College of Engineering, Kakinada",
+                    "location": "Kakinada, Andhra Pradesh",
+                    "website": "https://www.jntukucek.ac.in",
+                    "naac": "NAAC A+ Grade",
+                    "nirf": "NIRF Rank: 110",
+                    "fees": "CSE: \u20b910,000/year (Regular), \u20b945,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b928,000/year",
+                    "average_package": "\u20b96.8 LPA",
+                    "highest_package": "\u20b928.0 LPA",
+                    "placement_pct": "85%",
+                    "scholarships": "Jagananna Vidya Deevena (JVD) eligibility, State Merit Scholarships",
+                    "cutoff_rank": 1200,
+                    "explain_why": "Aspirational college. Cutoff rank (1200) is highly competitive relative to your rank (50000). However, it offers stellar placements (Highest: \u20b928.0 LPA, Avg: \u20b96.8 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "Sri Venkateswara University College of Engineering (SVUCE), Tirupati",
+                    "location": "Tirupati, Andhra Pradesh",
+                    "website": "https://www.svuce.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 105",
+                    "fees": "B.Tech branches: \u20b915,000/year (Regular)",
+                    "hostel_fee": "Hostel Fee: \u20b932,000/year",
+                    "average_package": "\u20b96.2 LPA",
+                    "highest_package": "\u20b922.0 LPA",
+                    "placement_pct": "82%",
+                    "scholarships": "JVD Fee Reimbursement, Merit Scholarships, SVU Alumni Scholarships",
+                    "cutoff_rank": 2000,
+                    "explain_why": "Aspirational college. Cutoff rank (2000) is highly competitive relative to your rank (50000). However, it offers stellar placements (Highest: \u20b922.0 LPA, Avg: \u20b96.2 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                }
+            ],
+            "target": [
+                {
+                    "name": "Anantha Lakshmi Institute of Technology and Sciences, Anantapur",
+                    "location": "Anantapur, Andhra Pradesh",
+                    "website": "http://www.alits.ac.in",
+                    "naac": "NAAC B+ Grade",
+                    "nirf": "N/A",
+                    "fees": "B.Tech: \u20b940,000/year (Convenor Quota)",
+                    "hostel_fee": "Hostel Fee: \u20b942,000/year",
+                    "average_package": "\u20b93.2 LPA",
+                    "highest_package": "\u20b97.0 LPA",
+                    "placement_pct": "70%",
+                    "scholarships": "JVD state full fee support, ALITS Merit Scholarships",
+                    "cutoff_rank": 35000,
+                    "explain_why": "Strong target option. Your rank (50000) is close to the cutoff cutoff range (35000). With realistic web options, you stand a competitive chance. Offers average placement packages of \u20b93.2 LPA and excellent accreditation (NAAC B+ Grade). Fits your constraints."
+                }
+            ],
+            "safe": []
+        },
+        "roadmap": {
+            "required_documents": [
+                "AP EAPCET / EAMCET Hall Ticket",
+                "AP EAPCET / EAMCET Rank Card",
+                "Intermediate Marks Memo (10+2 Certificate)",
+                "SSC Marks Memo (10th Certificate)",
+                "Study Certificates (Class 6 to Intermediate for Local status)",
+                "Aadhaar Card",
+                "Income Certificate (issued after Jan 1st of current year for fee reimbursement)",
+                "Caste/Category Certificate (if applicable for reservation)"
+            ],
+            "next_steps": [
+                {
+                    "step": 1,
+                    "title": "Counseling Registration",
+                    "description": "Pay processing fee online on the APSCHE EAPCET website once the official schedule is released."
+                },
+                {
+                    "step": 2,
+                    "title": "Certificate Verification",
+                    "description": "Verification of uploaded documents online. Visit helpline centers only if discrepancies are flagged."
+                },
+                {
+                    "step": 3,
+                    "title": "Web Option Entry",
+                    "description": "Log in to the counseling portal and enter college-branch codes. Put all 'Dream' options first, followed by 'Target', and then 'Safe' backups."
+                },
+                {
+                    "step": 4,
+                    "title": "Seat Allotment",
+                    "description": "Review the allotted college based on rank and reservation rules. You can opt for 'Self-Reporting' while participating in Phase 2."
+                },
+                {
+                    "step": 5,
+                    "title": "Physical Reporting",
+                    "description": "Visit the allotted college with original certificates, allotment order, and join within the specified timeline."
+                }
+            ]
+        }
+    },
+    "user_84cc403910fd45c19f0ba14296eb9619": {
+        "profile": {
+            "userId": "user_84cc403910fd45c19f0ba14296eb9619",
+            "name": "Jagadeesh Kumar",
+            "stream": "MPC",
+            "percentage": 90.0,
+            "mathMarks": 90.0,
+            "physicsMarks": 90.0,
+            "chemistryMarks": 90.0,
+            "rank": 50000,
+            "interests": [
+                "Technology & Coding",
+                "Artificial Intelligence"
+            ],
+            "preferred_branch": "CSE",
+            "budget": 150000.0,
+            "gov_preference": "Any",
+            "hostel_required": false,
+            "category": "OC",
+            "family_income": 300000.0
+        },
+        "branch_suggestions": [
+            {
+                "branch": "CSE (Computer Science & Engineering)",
+                "reason": "Top alignment with your interest in technology, coding, and software development."
+            },
+            {
+                "branch": "AI & ML / Data Science",
+                "reason": "Specifically tailored to intelligence models, analytics, and robotics algorithms."
+            }
+        ],
+        "preferred_branch_analysis": {},
+        "reality_check": {
+            "has_limitations": false,
+            "limitations": [],
+            "suggestions": []
+        },
+        "recommendations": {
+            "dream": [
+                {
+                    "name": "Andhra University College of Engineering (Autonomous), Visakhapatnam",
+                    "location": "Visakhapatnam, Andhra Pradesh",
+                    "website": "https://www.andhrauniversity.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 94",
+                    "fees": "CSE: \u20b915,000/year (Regular), \u20b950,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b930,000/year (including mess)",
+                    "average_package": "\u20b97.5 LPA",
+                    "highest_package": "\u20b932.0 LPA",
+                    "placement_pct": "88%",
+                    "scholarships": "Merit-based scholarships, full Jagananna Vidya Deevena fee reimbursement eligible, sports quota waiver",
+                    "cutoff_rank": 850,
+                    "explain_why": "Aspirational college. Cutoff rank (850) is highly competitive relative to your rank (50000). However, it offers stellar placements (Highest: \u20b932.0 LPA, Avg: \u20b97.5 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "JNTUK College of Engineering, Kakinada",
+                    "location": "Kakinada, Andhra Pradesh",
+                    "website": "https://www.jntukucek.ac.in",
+                    "naac": "NAAC A+ Grade",
+                    "nirf": "NIRF Rank: 110",
+                    "fees": "CSE: \u20b910,000/year (Regular), \u20b945,000/year (Self-Finance)",
+                    "hostel_fee": "Hostel Fee: \u20b928,000/year",
+                    "average_package": "\u20b96.8 LPA",
+                    "highest_package": "\u20b928.0 LPA",
+                    "placement_pct": "85%",
+                    "scholarships": "Jagananna Vidya Deevena (JVD) eligibility, State Merit Scholarships",
+                    "cutoff_rank": 1200,
+                    "explain_why": "Aspirational college. Cutoff rank (1200) is highly competitive relative to your rank (50000). However, it offers stellar placements (Highest: \u20b928.0 LPA, Avg: \u20b96.8 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                },
+                {
+                    "name": "Sri Venkateswara University College of Engineering (SVUCE), Tirupati",
+                    "location": "Tirupati, Andhra Pradesh",
+                    "website": "https://www.svuce.edu.in",
+                    "naac": "NAAC A++ Grade",
+                    "nirf": "NIRF Rank: 105",
+                    "fees": "B.Tech branches: \u20b915,000/year (Regular)",
+                    "hostel_fee": "Hostel Fee: \u20b932,000/year",
+                    "average_package": "\u20b96.2 LPA",
+                    "highest_package": "\u20b922.0 LPA",
+                    "placement_pct": "82%",
+                    "scholarships": "JVD Fee Reimbursement, Merit Scholarships, SVU Alumni Scholarships",
+                    "cutoff_rank": 2000,
+                    "explain_why": "Aspirational college. Cutoff rank (2000) is highly competitive relative to your rank (50000). However, it offers stellar placements (Highest: \u20b922.0 LPA, Avg: \u20b96.2 LPA) and top-tier infrastructure. Recommend putting this high on your web options list in case of second-round seat availability."
+                }
+            ],
+            "target": [
+                {
+                    "name": "Anantha Lakshmi Institute of Technology and Sciences, Anantapur",
+                    "location": "Anantapur, Andhra Pradesh",
+                    "website": "http://www.alits.ac.in",
+                    "naac": "NAAC B+ Grade",
+                    "nirf": "N/A",
+                    "fees": "B.Tech: \u20b940,000/year (Convenor Quota)",
+                    "hostel_fee": "Hostel Fee: \u20b942,000/year",
+                    "average_package": "\u20b93.2 LPA",
+                    "highest_package": "\u20b97.0 LPA",
+                    "placement_pct": "70%",
+                    "scholarships": "JVD state full fee support, ALITS Merit Scholarships",
+                    "cutoff_rank": 35000,
+                    "explain_why": "Strong target option. Your rank (50000) is close to the cutoff cutoff range (35000). With realistic web options, you stand a competitive chance. Offers average placement packages of \u20b93.2 LPA and excellent accreditation (NAAC B+ Grade). Fits your constraints."
+                }
+            ],
+            "safe": []
+        },
+        "roadmap": {
+            "required_documents": [
+                "AP EAPCET / EAMCET Hall Ticket",
+                "AP EAPCET / EAMCET Rank Card",
+                "Intermediate Marks Memo (10+2 Certificate)",
+                "SSC Marks Memo (10th Certificate)",
+                "Study Certificates (Class 6 to Intermediate for Local status)",
+                "Aadhaar Card",
+                "Income Certificate (issued after Jan 1st of current year for fee reimbursement)",
+                "Caste/Category Certificate (if applicable for reservation)"
+            ],
+            "next_steps": [
+                {
+                    "step": 1,
+                    "title": "Counseling Registration",
+                    "description": "Pay processing fee online on the APSCHE EAPCET website once the official schedule is released."
+                },
+                {
+                    "step": 2,
+                    "title": "Certificate Verification",
+                    "description": "Verification of uploaded documents online. Visit helpline centers only if discrepancies are flagged."
+                },
+                {
+                    "step": 3,
+                    "title": "Web Option Entry",
+                    "description": "Log in to the counseling portal and enter college-branch codes. Put all 'Dream' options first, followed by 'Target', and then 'Safe' backups."
+                },
+                {
+                    "step": 4,
+                    "title": "Seat Allotment",
+                    "description": "Review the allotted college based on rank and reservation rules. You can opt for 'Self-Reporting' while participating in Phase 2."
+                },
+                {
+                    "step": 5,
+                    "title": "Physical Reporting",
+                    "description": "Visit the allotted college with original certificates, allotment order, and join within the specified timeline."
+                }
+            ]
+        }
+    }
+}

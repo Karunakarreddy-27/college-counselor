@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f0fdfa;
+  --color-brand-100: #ccfbf1;
+  --color-brand-200: #99f6e4;
+  --color-brand-500: #0d9488;
+  --color-brand-600: #0f766e;
+  --color-brand-700: #115e59;
+  --color-brand-900: #134e4a;
+
+  --color-accent-50: #eff6ff;
+  --color-accent-100: #dbeafe;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
+  --color-accent-700: #1d4ed8;
+
+  --color-slate-850: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  --font-sans: "Outfit", "Inter", sans-serif;
+}
+
+@utility glass-panel {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  border-width: 1px;
+  border-color: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  border-radius: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(13, 148, 136, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+  }
+
+  ::selection {
+    background-color: #0d9488;
+    color: #ffffff;
+  }
+}
+
+/* Glassmorphism Panel hover transition */
+.glass-panel-hover {
+  @apply transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-700/50 hover:shadow-xl hover:-translate-y-0.5;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Interactive elements */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-teal-400 to-accent-500;
+}
+
+.gradient-btn {
+  @apply bg-gradient-to-r from-brand-600 to-accent-600 text-white hover:from-brand-500 hover:to-accent-500 shadow-md hover:shadow-lg transition-all duration-300 transform active:scale-95 flex items-center justify-center font-medium rounded-xl px-5 py-3;
+}
+
+.gradient-btn-outline {
+  @apply border border-slate-800 bg-slate-900/50 hover:bg-slate-800/80 hover:border-slate-700 text-slate-200 transition-all duration-300 active:scale-95 flex items-center justify-center font-medium rounded-xl px-5 py-3;
+}
+
+/* Glowing circles background */
+.glow-spot {
+  @apply absolute rounded-full blur-[120px] pointer-events-none opacity-40 mix-blend-screen;
+}
+
+/* Status dots */
+.status-pill-green {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800/50;
+}
+
+.status-pill-yellow {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-950 text-amber-300 border border-amber-800/50;
+}
+
+.status-pill-red {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-950 text-rose-300 border border-rose-800/50;
+}

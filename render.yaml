@@ -1,0 +1,39 @@
+# Example Render manifest (replace placeholders before use)
+# This file is an example to help configure Render services. You can
+# instead set environment variables and service settings in the Render
+# dashboard if you prefer.
+
+services:
+  - type: web
+    name: ap-admission-backend
+    env: docker
+    branch: main
+    dockerfilePath: backend/Dockerfile
+    plan: free
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    # Environment variables: set these in the Render dashboard (Secrets)
+    envVars:
+      - key: MONGO_URI
+        fromEnv: MONGO_URI
+      - key: MONGO_DB_NAME
+        fromEnv: MONGO_DB_NAME
+      - key: GEMINI_API_KEY
+        fromEnv: GEMINI_API_KEY
+      - key: AUTH_SECRET
+        fromEnv: AUTH_SECRET
+      - key: FRONTEND_ORIGINS
+        fromEnv: FRONTEND_ORIGINS
+
+  - type: static
+    name: ap-admission-frontend
+    branch: main
+    buildCommand: cd frontend && npm ci && npm run build
+    publishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        fromEnv: VITE_API_URL
+
+# Notes:
+# - Replace `branch` with the branch you want Render to deploy from.
+# - If Render's parser rejects `fromEnv`, set secure environment variables
+#   via the Render dashboard and remove `envVars` entries from this file.

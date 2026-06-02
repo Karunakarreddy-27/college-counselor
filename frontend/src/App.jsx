@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  GraduationCap, BookOpen, User, Coins, Scale, MessageSquare, 
+  GraduationCap, BookOpen, User, Coins, Scale, FileText, MessageSquare, 
   LogOut, CheckCircle2, Compass, Bookmark, ExternalLink, 
-  Sparkles, Clock, ArrowRight, UserCheck, Plus, Trash2, Home, Check, Info, 
+  Sparkles, ArrowRight, UserCheck, Plus, Trash2, Home, Check, Info, 
   ChevronRight, RefreshCw, Send, HelpCircle
 } from 'lucide-react';
 
@@ -57,9 +57,8 @@ export default function App() {
   const [authLoading, setAuthLoading] = useState(true);
   
   // App Navigation
-  const [activeTab, setActiveTab] = useState('dashboard'); // dashboard, branch, colleges, reality, scholarships, compare, chatbot
+  const [activeTab, setActiveTab] = useState('dashboard'); // dashboard, branch, colleges, reality, scholarships, compare, roadmap, chatbot
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [showAuthForm, setShowAuthForm] = useState(false);
 
   // Profile Collection Wizard State
   const [hasCompletedProfile, setHasCompletedProfile] = useState(false);
@@ -86,10 +85,8 @@ export default function App() {
   const [branchSuggestions, setBranchSuggestions] = useState([]);
   const [realityCheck, setRealityCheck] = useState(null);
   const [eligibleScholarships, setEligibleScholarships] = useState([]);
+  const [roadmap, setRoadmap] = useState(null);
   const [savedColleges, setSavedColleges] = useState([]);
-
-  // Recently viewed comparisons (persisted)
-  const [recentComparisons, setRecentComparisons] = useState([]);
 
   // Comparison Panel States
   const [compareList, setCompareList] = useState([]);
@@ -206,6 +203,7 @@ export default function App() {
       setRecommendations(recData.recommendations);
       setBranchSuggestions(recData.branch_suggestions);
       setRealityCheck(recData.reality_check);
+      setRoadmap(recData.roadmap);
       
       // 2. Scholarship API
       const scholRes = await authFetch(`${API_BASE}/counselor/scholarships`, {
@@ -374,6 +372,29 @@ export default function App() {
     }
     setEligibleScholarships(schols);
 
+    // 5. Build Roadmap
+    const documents = [
+      "AP EAPCET / EAMCET Hall Ticket",
+      "AP EAPCET / EAMCET Rank Card",
+      "Intermediate Marks Memo (12th Board Sheet)",
+      "SSC Certificate (10th Board Sheet)",
+      "Study/Residence certificates (Class 6 to Intermediate)",
+      "Aadhaar Identity Card",
+      "Income Certificate (issued within the current calendar year)",
+    ];
+    if (category !== 'OC') {
+      documents.push("Integrated Community Certificate (Caste Certificate)");
+    }
+    
+    setRoadmap({
+      required_documents: documents,
+      next_steps: [
+        { step: 1, title: "Counseling Fees", description: "Log on to the APSCHE site to register and clear registration charges online." },
+        { step: 2, title: "Document Check", description: "Certificates are verified online. Look out for SMS reports in case correction uploads are requested." },
+        { step: 3, title: "Option Web-Entry", description: "Log into the portal to index your college selection key codes. Position all Dream colleges first, followed by Targets and Safe reserves." },
+        { step: 4, title: "Allotment Result", description: "Check designated college. Download joining order or sign up for round 2 upgrades." }
+      ]
+    });
   };
 
   // Saved College Actions
@@ -454,56 +475,15 @@ export default function App() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.detail || 'Compare failed');
       setCompareResult(data);
-      // record recent comparison for quick access
-      try { addRecentComparison(data); } catch (e) { /* ignore */ }
     } catch {
       // Fallback to local comparison
       const local = buildLocalResult(names);
       if (local) {
         setCompareResult(local);
-        try { addRecentComparison(local); } catch (e) { /* ignore */ }
       }
     } finally {
       setIsComparing(false);
     }
-  };
-
-  // Persist/load recent comparisons (use localStorage key scoped by user if available)
-  useEffect(() => {
-    try {
-      const key = `recent_compares_${(user && user.uid) ? user.uid : 'anon'}`;
-      const raw = localStorage.getItem(key);
-      if (raw) setRecentComparisons(JSON.parse(raw));
-    } catch (e) {
-      setRecentComparisons([]);
-    }
-  }, [user]);
-
-  useEffect(() => {
-    try {
-      const key = `recent_compares_${(user && user.uid) ? user.uid : 'anon'}`;
-      localStorage.setItem(key, JSON.stringify(recentComparisons));
-    } catch (e) {
-      // ignore storage errors
-    }
-  }, [recentComparisons, user]);
-
-  const addRecentComparison = (compareData) => {
-    if (!compareData || !compareData.comparison || !compareData.comparison.length) return;
-    const pairNames = compareData.comparison.slice(0,2).map(c => c.name.split('(')[0].trim());
-    const id = pairNames.join('::');
-    const item = {
-      id,
-      names: pairNames,
-      preview: compareData.comparison.slice(0,2).map(c => ({ name: c.name, fees: c.fees || c.fee || c.fee_estimate || '', average_package: c.placements_avg || c.average_package || '' })),
-      ts: Date.now()
-    };
-
-    setRecentComparisons(prev => {
-      const filtered = prev.filter(p => p.id !== id);
-      const next = [item, ...filtered].slice(0, 6);
-      return next;
-    });
   };
 
   // Chatbot Submissions
@@ -664,6 +644,11 @@ export default function App() {
     }
   };
 
+  // Document checklist local persistence
+  const [checkedDocs, setCheckedDocs] = useState({});
+  const toggleDoc = (doc) => {
+    setCheckedDocs({ ...checkedDocs, [doc]: !checkedDocs[doc] });
+  };
 
   return (
     <div className="min-h-screen font-sans flex flex-col bg-slate-950">
@@ -713,53 +698,52 @@ export default function App() {
           </main>
         ) : !isAuthenticated ? (
           <main className="flex-1 flex items-center justify-center p-6">
-            <div className="max-w-2xl w-full glass-panel p-10 shadow-glass border-slate-800">
-              {showAuthForm ? (
-                <>
-                  <div className="text-center mb-6">
-                    <div className="inline-flex bg-brand-500/10 p-4 rounded-2xl mb-3 text-brand-400">
-                      <Sparkles className="w-8 h-8" />
-                    </div>
-                    <h2 className="text-2xl font-extrabold tracking-tight">{authMode === 'login' ? 'Sign In' : 'Register'}</h2>
-                    <p className="text-sm text-slate-400 mt-1">To continue, sign in or create an account for personalized college guidance.</p>
-                  </div>
+            <div className="max-w-md w-full glass-panel p-8 shadow-glass border-slate-800 flex flex-col">
+              
+              <div className="text-center mb-6">
+                <div className="inline-flex bg-brand-500/10 p-4 rounded-2xl mb-3 text-brand-400">
+                  <Sparkles className="w-8 h-8" />
+                </div>
+                <h2 className="text-2xl font-extrabold tracking-tight">{authMode === 'login' ? 'Sign In' : 'Register'}</h2>
+                <p className="text-sm text-slate-400 mt-1">Get personalized guidance, cutoffs, and roadmaps for Andhra Pradesh EAPCET colleges.</p>
+              </div>
 
-                  {authError && (
-                    <div className="bg-rose-950/50 border border-rose-800/80 rounded-xl p-3 text-sm text-rose-300 mb-4 text-center">
-                      {authError}
+              {authError && (
+                <div className="bg-rose-950/50 border border-rose-800/80 rounded-xl p-3 text-sm text-rose-300 mb-4 text-center">
+                  {authError}
+                </div>
+              )}
+              {authMode === 'login' ? (
+                  <form onSubmit={handleAuth} className="space-y-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Email Address</label>
+                      <input 
+                        type="email" 
+                        placeholder="student@example.com" 
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors"
+                      />
                     </div>
-                  )}
-                  {authMode === 'login' ? (
-                      <form onSubmit={handleAuth} className="space-y-4">
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Email Address</label>
-                          <input 
-                            type="email" 
-                            placeholder="student@example.com" 
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Password</label>
-                          <input 
-                            type="password" 
-                            placeholder="••••••••" 
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors"
-                          />
-                        </div>
-                        <button type="submit" className="w-full gradient-btn">
-                          Sign In with Email
-                        </button>
-                      </form>
-                    ) : (
-                      <form onSubmit={handleRegister} className="space-y-4">
-                        <div>
-                          <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Email Address</label>
-                          <input 
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Password</label>
+                      <input 
+                        type="password" 
+                        placeholder="••••••••" 
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors"
+                      />
+                    </div>
+                    <button type="submit" className="w-full gradient-btn">
+                      Sign In with Email
+                    </button>
+                  </form>
+                ) : (
+                  <form onSubmit={handleRegister} className="space-y-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Email Address</label>
+                      <input 
                         type="email" 
                         placeholder="student@example.com" 
                         value={email}
@@ -789,41 +773,7 @@ export default function App() {
                     <span className="text-sm text-slate-400">Already have an account? <button className="text-brand-400 underline" onClick={() => setAuthMode('login')}>Sign In</button></span>
                   )}
                 </div>
-                <div className="text-center mt-4">
-                  <button
-                    onClick={() => setShowAuthForm(false)}
-                    className="text-xs text-slate-400 hover:text-slate-200"
-                  >Back to info</button>
-                </div>
-              </>
-              ) : (
-                <div className="text-center">
-                  <div className="inline-flex bg-brand-500/10 p-4 rounded-2xl mb-5 text-brand-400">
-                    <Sparkles className="w-8 h-8" />
-                  </div>
-                  <h2 className="text-3xl font-extrabold tracking-tight text-slate-100">Confused about which college to join?</h2>
-                  <p className="text-sm text-slate-400 mt-4 max-w-xl mx-auto">
-                    Many students struggle to decide between colleges after EAPCET. This portal helps you compare fees, placements, cutoffs, and scholarships so you can choose the best fit for your profile.
-                  </p>
-                  <div className="mt-8 grid gap-4 text-left">
-                    <div className="rounded-3xl p-4 border border-slate-800 bg-slate-950/80">
-                      <p className="text-sm text-slate-400">• Compare realistic college choices for your rank.</p>
-                    </div>
-                    <div className="rounded-3xl p-4 border border-slate-800 bg-slate-950/80">
-                      <p className="text-sm text-slate-400">• See fees, placements, and eligibility without confusion.</p>
-                    </div>
-                    <div className="rounded-3xl p-4 border border-slate-800 bg-slate-950/80">
-                      <p className="text-sm text-slate-400">• Get personalized recommendations for AP counseling and branch guidance.</p>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setShowAuthForm(true)}
-                    className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-500 px-8 py-3 text-sm font-semibold text-slate-950 hover:bg-brand-400 transition-colors"
-                  >
-                    Get Started
-                  </button>
-                </div>
-              )}
+
             </div>
           </main>
         ) : !hasCompletedProfile ? (
@@ -1207,6 +1157,15 @@ export default function App() {
                   {isSidebarOpen && <span>Compare Dash</span>}
                 </button>
 
+                <button 
+                  onClick={() => setActiveTab('roadmap')} 
+                  className={`w-full flex items-center gap-3.5 px-4.5 py-3 text-sm font-medium rounded-xl transition-all ${
+                    activeTab === 'roadmap' ? 'bg-brand-500/10 text-brand-400 font-semibold border border-brand-500/20' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
+                  }`}
+                >
+                  <FileText className="w-4.5 h-4.5" />
+                  {isSidebarOpen && <span>Admission Roadmap</span>}
+                </button>
 
                 <button 
                   onClick={() => setActiveTab('chatbot')} 
@@ -1249,10 +1208,14 @@ export default function App() {
                       </div>
 
                       {/* Brief statistics */}
-                      <div className="grid grid-cols-2 gap-4 border-t border-slate-800 mt-6 pt-5">
+                      <div className="grid grid-cols-3 gap-4 border-t border-slate-800 mt-6 pt-5">
                         <div>
                           <span className="block text-xs text-slate-400">Preferred Course</span>
                           <span className="text-base font-bold text-slate-200">{profileData.preferred_branch}</span>
+                        </div>
+                        <div>
+                          <span className="block text-xs text-slate-400">Income Eligible</span>
+                          <span className="text-base font-bold text-brand-400">{profileData.family_income <= 250000 ? 'JVD Eligible' : 'Standard Fee'}</span>
                         </div>
                         <div>
                           <span className="block text-xs text-slate-400">Total Bookmarked</span>
@@ -1284,13 +1247,13 @@ export default function App() {
                     {/* Brief Recommendations preview */}
                     <div className="glass-panel p-6 space-y-4">
                       <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <h3 className="text-base font-bold flex items-center gap-2"><Clock className="w-4.5 h-4.5 text-brand-400" /> Recently viewed</h3>
-                        <button onClick={() => setActiveTab('colleges')} className="text-xs text-brand-400 hover:text-brand-300 font-semibold">{recentComparisons && recentComparisons.length > 0 ? `View All (${recentComparisons.length})` : 'View All'}</button>
+                        <h3 className="text-base font-bold flex items-center gap-2"><Sparkles className="w-4.5 h-4.5 text-brand-400" /> College Picks preview</h3>
+                        <button onClick={() => setActiveTab('colleges')} className="text-xs text-brand-400 hover:text-brand-300 font-semibold">View All ({LOCAL_COLLEGES.length})</button>
                       </div>
                       
-                      {recentComparisons && recentComparisons.length > 0 ? (
+                      {recommendations ? (
                         <div className="space-y-3">
-                          {recentComparisons[0].preview.map((col, index) => (
+                          {(recommendations.preferred || []).slice(0, 2).map((col, index) => (
                             <div key={index} className="p-3.5 bg-slate-950/60 border border-slate-800/80 rounded-xl flex items-center justify-between">
                               <div>
                                 <h4 className="text-sm font-bold text-slate-200 truncate max-w-[280px]">{col.name}</h4>
@@ -1310,7 +1273,7 @@ export default function App() {
                           ))}
                         </div>
                       ) : (
-                        <div className="p-3.5 text-sm text-slate-400">No recently viewed colleges yet. <button onClick={() => setActiveTab('colleges')} className="text-brand-400 hover:underline">Browse colleges</button></div>
+                        <p className="text-sm text-slate-400">Loading recommendations...</p>
                       )}
                     </div>
 
@@ -1671,6 +1634,60 @@ export default function App() {
                 </div>
               )}
 
+              {/* VIEW: ROADMAP & NEXT STEPS */}
+              {activeTab === 'roadmap' && (
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  
+                  {/* Timeline next steps */}
+                  <div className="lg:col-span-2 glass-panel p-6 space-y-6">
+                    <div>
+                      <h2 className="text-xl font-bold">Counseling Roadmap & Stages</h2>
+                      <p className="text-xs text-slate-400 mt-1">Chronological checklist of next steps to execute during AP state web-counseling.</p>
+                    </div>
+
+                    {roadmap ? (
+                      <div className="space-y-6 relative border-l border-slate-800 pl-6 ml-4">
+                        {roadmap.next_steps.map((st, idx) => (
+                          <div key={idx} className="relative space-y-1">
+                            <span className="absolute -left-[35px] w-5.5 h-5.5 bg-slate-950 border-2 border-brand-500 rounded-full flex items-center justify-center text-[10px] font-bold text-brand-400">
+                              {st.step}
+                            </span>
+                            <h3 className="text-sm font-bold text-slate-200">{st.title}</h3>
+                            <p className="text-xs text-slate-400 leading-relaxed">{st.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-slate-400">Generating roadmap details...</p>
+                    )}
+                  </div>
+
+                  {/* Documents verification card */}
+                  <div className="glass-panel p-6 space-y-4">
+                    <h3 className="text-sm font-bold border-b border-slate-800 pb-3 flex items-center gap-2"><FileText className="w-4.5 h-4.5 text-brand-400" /> Mandatory Documents</h3>
+                    <p className="text-[10px] text-slate-400">Ensure scan copies are ready for portal uploading. Track verify progress below:</p>
+
+                    {roadmap ? (
+                      <div className="space-y-3.5 pt-2">
+                        {roadmap.required_documents.map((doc, idx) => (
+                          <div key={idx} className="flex items-start gap-3 text-xs text-slate-300">
+                            <input
+                              type="checkbox"
+                              id={`doc_${idx}`}
+                              checked={!!checkedDocs[doc]}
+                              onChange={() => toggleDoc(doc)}
+                              className="w-4 h-4 rounded text-brand-500 focus:ring-brand-500 bg-slate-950 border-slate-800 mt-0.5"
+                            />
+                            <label htmlFor={`doc_${idx}`} className={`leading-tight cursor-pointer ${checkedDocs[doc] ? 'line-through text-slate-500' : ''}`}>{doc}</label>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-slate-400">Loading list...</p>
+                    )}
+                  </div>
+                </div>
+              )}
 
               {/* VIEW: CHATBOT */}
               {activeTab === 'chatbot' && (

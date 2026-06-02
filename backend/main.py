@@ -583,10 +583,9 @@ def chat_bot(msg: ChatMessage, current_user: Dict[str, Any] = Depends(get_curren
                 model = genai.GenerativeModel('gemini-2.5-flash')
                 prompt = (
                     "You are a concise AI Admission Counselor for Andhra Pradesh engineering students.\n"
-                    "Answer only the specific detail the user asked for. Do not add unrelated college data, filler, or unasked comparisons.\n"
-                    "If the user asks for fees, placements, cutoffs, or scholarships, return only that requested field.\n"
-                    "If the context does not contain the requested fact, say exactly which college detail is missing.\n"
-                    "Use no more than 3 short sentences unless the user explicitly requests a list or comparison.\n\n"
+                    "Answer only the current user question. Do not include unrelated college details.\n"
+                    "Use a maximum of 4 short sentences unless the user explicitly asks to compare or list many items.\n"
+                    "If the context does not contain the requested fact, say what specific detail is needed.\n\n"
                     f"Relevant Context:\n{context}\n\n"
                     f"User Question: {query}\n"
                     "Answer:"
@@ -705,6 +704,7 @@ def chat_bot(msg: ChatMessage, current_user: Dict[str, Any] = Depends(get_curren
                 if naac: response_text += f" — {naac.split(':', 1)[-1].strip()}"
                 if avg: response_text += f"\nPlacements: avg {avg.split(':', 1)[-1].strip()}"
                 if fee: response_text += f"\nFees: {fee.split(':', 1)[-1].strip()[:80]}"
+                response_text += "\n\nAsk me about fees, placements, cutoffs, or scholarships for more details."
             else:
                 response_text = "I couldn't find specific information for that query. Try asking about a specific college, fee, cutoff, or placement."
             
